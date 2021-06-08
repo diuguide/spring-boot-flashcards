@@ -1,6 +1,5 @@
 package com.springboot.controllers;
 
-
 import com.springboot.dtos.Credentials;
 import com.springboot.models.User;
 import com.springboot.repos.UserRepository;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -25,9 +25,10 @@ public class UserController {
         this.userRepo = userRepo;
     }
 
-    @GetMapping("/")
-    public String test() {
-        return "This route is working";
+    @GetMapping(value="/", produces= APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+    public List<User> test() {
+        logger.info("Grabbing all registered Users");
+        return userRepo.findAll();
     }
 
     @PostMapping(value="/addUser", produces = APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
