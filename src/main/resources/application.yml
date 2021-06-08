@@ -1,0 +1,23 @@
+server:
+  port: 5000
+
+spring:
+  application:
+    name: flashcards
+
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://java-react-enterprise.cj7phrpgw9cj.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=flashcards
+    username: postgres
+    password: beachhouse
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
