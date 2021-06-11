@@ -22,7 +22,7 @@ public class CardController {
         this.cardRepo = cardRepo;
     }
 
-    @GetMapping(value = "/test", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/getAll", produces = APPLICATION_JSON_VALUE)
     public List<FlashCard> getAllCards() {
         logger.info("Get all cards fired.");
         return cardRepo.findAll();

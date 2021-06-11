@@ -25,7 +25,7 @@ public class UserController {
         this.userRepo = userRepo;
     }
 
-    @GetMapping(value="/", produces= APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
+    @GetMapping(value="/getAll", produces= APPLICATION_JSON_VALUE, consumes = APPLICATION_JSON_VALUE)
     public List<User> test() {
         logger.info("Grabbing all registered Users");
         return userRepo.findAll();

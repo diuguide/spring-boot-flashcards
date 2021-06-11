@@ -1,19 +1,21 @@
-
-.login {
+.start {
     margin-bottom: 10px;
 }
 .btn-container {
-    z-index: 99;
+  z-index: 99;
 }
-.addCard, .login {
-    color: aliceblue;
-    text-align: right;
-    cursor: pointer; 
-    margin-right: 10px;
-      
+.addCard,
+.login,
+.start {
+  color: aliceblue;
+  text-align: right;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
-.addCard:hover, .login:hover {
-    transform: scale(1.2, 1.2);
-    color: rgb(0, 172, 252);
+.addCard:hover,
+.login:hover,
+.start:hover {
+  transform: scale(1.2, 1.2);
+  color: rgb(0, 172, 252);
 }
