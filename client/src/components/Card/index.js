@@ -1,18 +1,23 @@
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { cardRepoState } from '../../features/cardRepo/cardRepoSlice';
+import { cardRepoState } from "../../features/cardRepo/cardRepoSlice";
 
 const QCard = () => {
+  const repo = useSelector(cardRepoState);
 
-    const repo = useSelector(cardRepoState);
-
-    return (
-        <Row>
-            <Col>
-            TEST TEXT
-            </Col>
-        </Row>
-    )
-}
+  return (
+    <Row>
+      {repo.cards.length > 0 && repo.count <= repo.cards.length - 1 ? (
+        <Col>
+          {repo.side
+            ? repo.cards[repo.count].question
+            : repo.cards[repo.count].answer}
+        </Col>
+      ) : (
+        <Col>No Cards Available</Col>
+      )}
+    </Row>
+  );
+};
 
 export default QCard;

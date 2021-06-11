@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     isLoading: false,
     cards: [],
-    side: false
+    side: true,
+    count: 0,
+    msg:""
 };
 
 export const cardRepoSlice = createSlice({
@@ -18,13 +20,27 @@ export const cardRepoSlice = createSlice({
         },
         flipCard: (state) => {
             state.side = !state.side;
+        },
+        prevCard: (state) => {
+            state.count = state.count - 1;
+            state.side = true;
+        },
+        nextCard: (state) => {
+            state.count = state.count + 1;
+            state.side = true;
+        },
+        resetCount: (state) => {
+            state.count = 0;
+        },
+        sendMessage: (state, action) => {
+            state.msg = action.payload.msg;
         }
   },
   
 });
 
-export const { isLoading, addCard, flipCard } = cardRepoSlice.actions;
+export const { isLoading, addCard, flipCard, nextCard, prevCard, resetCount, sendMessage } = cardRepoSlice.actions;
 
-export const cardRepoState = (state) => cardRepoSlice.state;
+export const cardRepoState = (state) => state.cardRepo;
 
 export default cardRepoSlice.reducer;
