@@ -1,6 +1,7 @@
 import { Row, Col, Container } from "react-bootstrap";
 import NavBar from "./components/Main/NavBar";
 import QCard from "./components/Card";
+import AddCard from "./components/Forms/AddCard";
 import "./scss/App.scss";
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
             <div className="btn-flip">FLIP</div>
             <div className="btn-next">&gt;</div>
           </div>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="d-flex justify-content-center">
+          <AddCard />
         </Col>
       </Row>
     </Container>
