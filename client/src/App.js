@@ -1,57 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { Row, Col, Container } from "react-bootstrap";
+import NavBar from "./components/Main/NavBar";
+import QCard from "./components/Card";
+import "./scss/App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Container>
+      <Row
+        style={{ height: "100vh" }}
+        className="d-flex justify-content-center align-items-center"
+      >
+        <NavBar />
+        <Col
+          lg={6}
+          style={{ height: "70vh" }}
+          className="bg-light d-flex justify-content-center align-items-center"
+        >
+          <QCard />
+          <div className="bottomRow">
+            <div className="btn-prev">&lt;</div>
+            <div className="btn-flip">FLIP</div>
+            <div className="btn-next">&gt;</div>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

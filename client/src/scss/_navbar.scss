@@ -1,0 +1,14 @@
+
+.login {
+    margin-bottom: 10px;
+}
+.addCard, .login {
+    color: aliceblue;
+    text-align: right;
+    cursor:pointer;   
+}
+
+.addCard:hover, .login:hover {
+    transform: scale(1.2, 1.2);
+    color: rgb(0, 172, 252);
+}

@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("/users")
 public class UserController {
