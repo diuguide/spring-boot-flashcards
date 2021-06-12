@@ -21,16 +21,21 @@ export const getAllUsers = async () => {
 }
 
 export const addUser = async (user) => {
-    let response = await client.post("/users/addUser", user);
-    return await response.data;
+    let loginCreds = {
+        username: user.username,
+        password: user.password,
+        email: user.email
+    }
+    let response = await client.post("/users/addUser", loginCreds);
+    return await response;
 }
 
 export const loginUser = async (loginCreds) => {
     let response = await client.post("/users/login", loginCreds);
-    return await response.data;
+    return await response;
 }
 
 export const deleteUser = async (id) => {
     let response = await client.delete("/users/deleteUser", id);
-    return await response.data;
+    return await response;
 }

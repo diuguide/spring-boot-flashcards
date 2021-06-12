@@ -1,9 +1,17 @@
 import { Row, Col } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { cardRepoState } from "../../features/cardRepo/cardRepoSlice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  cardRepoState,
+  resetCount,
+} from "../../features/cardRepo/cardRepoSlice";
 
 const QCard = () => {
   const repo = useSelector(cardRepoState);
+  const dispatch = useDispatch();
+
+  if (repo.count == repo.cards.length) {
+    dispatch(resetCount());
+  }
 
   return (
     <Row>

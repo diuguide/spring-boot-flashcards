@@ -1,12 +1,14 @@
 .start {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .btn-container {
   z-index: 99;
 }
 .addCard,
 .login,
-.start {
+.start,
+.register,
+.logout {
   color: aliceblue;
   text-align: right;
   cursor: pointer;
@@ -15,7 +17,9 @@
 
 .addCard:hover,
 .login:hover,
-.start:hover {
+.start:hover,
+.logout:hover,
+.register:hover {
   transform: scale(1.2, 1.2);
   color: rgb(0, 172, 252);
 }
