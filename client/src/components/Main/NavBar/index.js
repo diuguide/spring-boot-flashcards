@@ -42,6 +42,7 @@ const NavBar = () => {
           height: "100%",
           zindex: "0",
         }}
+        alt="banner"
         src="./quality.jpg"
       ></img>
       <div className="btn-container">

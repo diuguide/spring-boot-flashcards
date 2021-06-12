@@ -29,8 +29,9 @@ export const cardRepoSlice = createSlice({
       state.status = false;
     },
     addCard: (state, action) => {
-        let data = action.payload.data;
-        data.forEach(card => state.cards.push(card));
+      state.cards = [];
+      let data = action.payload.data;
+      data.forEach((card) => state.cards.push(card));
     },
     flipCard: (state) => {
       state.side = !state.side;

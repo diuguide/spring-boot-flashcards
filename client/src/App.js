@@ -18,7 +18,7 @@ function App() {
   const repo = useSelector(cardRepoState);
 
   const handlePrev = (e) => {
-    if (!repo.count === 0) {
+    if (!repo.count == 0) {
       dispatch(prevCard());
     }
   };
@@ -31,7 +31,7 @@ function App() {
     dispatch(nextCard());
   };
 
-  if (repo.count === repo.cards.length) {
+  if (repo.count == repo.cards.length) {
     dispatch(resetCount());
   }
 

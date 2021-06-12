@@ -1,13 +1,9 @@
 import { Form, Button } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
-import { addCard, cardRepoState } from "../../../features/cardRepo/cardRepoSlice";
 import { useState } from "react";
 import { addCardToDb } from "../../../Utilities/api";
 
 const AddCard = () => {
-  const dispatch = useDispatch();
-  const repo = useSelector(cardRepoState);
-
+  
   const [card, setCard] = useState({
     question: "",
     answer: "",
@@ -20,7 +16,6 @@ const AddCard = () => {
   const handleClick = (e) => {
     e.preventDefault();
     addCardToDb(card).then(res => {
-      dispatch(addCard(card));
       setCard({ question: "", answer: "" });
     }).catch(err => console.log(err));
       
